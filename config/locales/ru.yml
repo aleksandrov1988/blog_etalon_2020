@@ -1,9 +1,38 @@
 ru:
   app:
     name: Блоги
+  activerecord:
+    models:
+      user: Пользователь
+    attributes:
+      user:
+        login: Имя пользователя
+        name: Имя
+        password: Пароль
+        password_confirmation: Пароль (повторно)
+        admin: Администратор
+    errors:
+      title: При сохранении произошли ошибки
+  helpers:
+    forbidden: Доступ запрещён
   users:
     new:
       btn: Зарегистрироваться
       title: Регистрация
-    form:  
+    form:
       submit: Зарегистрироваться
+    create:
+      success: Регистрация успешно завершена
+  sessions:
+    destroy:
+      btn: Выйти
+    new:
+      btn: Войти
+      submit: Войти
+    create:
+      user_not_found: Пользователь не найден
+      invalid_password: Неверное имя пользователя или пароль
+      success: Вход выполнен
+    destroy:
+      btn: Выйти
+      success: Выход выполнен

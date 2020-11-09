@@ -3,3 +3,10 @@
 body{
   padding-top: 5rem;
 }
+
+.field_with_errors .form-control{
+  @extend .is-invalid;
+}
+.alert-notice{
+  @extend .alert-primary;
+}

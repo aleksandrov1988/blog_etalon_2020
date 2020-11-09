@@ -7,4 +7,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true, length: {in: 2...100}
   validates :login, presence: true, length: {in: 2..100}, uniqueness: {case_sensetive: false}
+
+  def edit_by?(current_user)
+    current_user && (current_user == self || current_user.admin?)
+  end
 end
