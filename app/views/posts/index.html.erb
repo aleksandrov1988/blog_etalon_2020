@@ -1,32 +1,4 @@
-
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Body</th>
-      <th>Title</th>
-      <th>Views count</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.body %></td>
-        <td><%= post.title %></td>
-        <td><%= post.views_count %></td>
-        <td><%= post.user_id %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
+<h1><%= t('.title') %></h1>
+<%= link_to t('posts.new.btn'), new_post_path, class: 'btn btn-primary' %>
+<%= render @posts %>
+<%= paginate @posts %>

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_many :posts, -> { ordering }, dependent: :destroy
   has_many :comments, -> { ordering }, dependent: :destroy
 
+  scope :ordering, -> { order(:name) }
+
 
   validates :name, presence: true, length: {in: 2...100}
   validates :login, presence: true, length: {in: 2..100}, uniqueness: {case_sensetive: false}

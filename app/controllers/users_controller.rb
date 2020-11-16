@@ -5,12 +5,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.ordering.page(params[:page])
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    @posts = @user.posts
   end
 
   # GET /users/new

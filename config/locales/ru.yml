@@ -4,7 +4,23 @@ ru:
   activerecord:
     models:
       user: Пользователь
+      post: Пост
+      comment: Комментарий
     attributes:
+      comment:
+        post: Пост
+        post_id: Пост
+        user: Пользователь
+        user_id: Пользователь
+        body: Текст комментария
+      post:
+        comments: Комментарии
+        comment_ids: Комментарии
+        user: Пользователь
+        user_id: Пользователь
+        title: Заголовок
+        body: Текст
+        views_count: Количество просмотров
       user:
         login: Имя пользователя
         name: Имя
@@ -15,6 +31,12 @@ ru:
       title: При сохранении произошли ошибки
   helpers:
     forbidden: Доступ запрещён
+    sure: Вы уверены?
+    submit:
+      create: Сохранить
+      submit: Сохранить
+      update: Сохранить
+
   users:
     new:
       btn: Зарегистрироваться
@@ -23,6 +45,9 @@ ru:
       submit: Зарегистрироваться
     create:
       success: Регистрация успешно завершена
+    index:
+      btn: Пользователи
+      title: Пользователи  
   sessions:
     destroy:
       btn: Выйти
@@ -36,3 +61,41 @@ ru:
     destroy:
       btn: Выйти
       success: Выход выполнен
+  posts:
+    index:
+      title: Посты
+      btn: Посты
+    new:
+      btn: Добавить пост
+      title: Добавление поста
+    create:
+      success: Пост добавлен
+    show:
+      btn: Подробнее
+      comments_not_found: Комментарии не найдены
+    edit:
+      btn: Редактировать
+      title: Редактирование поста
+    update:
+      success: Пост изменён
+    destroy:
+      btn: Удалить
+      success: Пост удалён
+  comments:
+    create:
+      success: Комментарий создан
+    edit:
+      btn: Редактировать
+      title: Редактирование комментария
+    update:
+      success: Комментарий изменён
+    destroy:
+      btn: Удалить
+      success: Комментарий удалён
+  views:
+    pagination:
+      first: ⇤
+      last: ⇥
+      previous: ←
+      next: →
+      truncate: …
