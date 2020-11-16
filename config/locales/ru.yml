@@ -47,7 +47,17 @@ ru:
       success: Регистрация успешно завершена
     index:
       btn: Пользователи
-      title: Пользователи  
+      title: Пользователи
+    show:
+      btn: Профиль
+    edit:
+      btn: Редактировать
+      title: Редактирование пользователя
+    update:  
+      success: Пользователь изменён
+    destroy:
+      btn: Удалить
+      success: Пользователь удалён
   sessions:
     destroy:
       btn: Выйти

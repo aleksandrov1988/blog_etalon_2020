@@ -5,13 +5,11 @@ class PostsController < ApplicationController
   after_action :increment_views_count, only: :show
 
   # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.includes(:user).ordering.page(params[:page])
   end
 
   # GET /posts/1
-  # GET /posts/1.json
   def show
     @post = Post.includes(:user, comments: :user).find(params[:id])
     @comment = Comment.new(post: @post)
@@ -27,11 +25,9 @@ class PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.json
   def create
     @post = Post.new(post_params)
     @post.user = @current_user
-
     if @post.save
       redirect_to @post, notice: t('.success')
     else
@@ -40,7 +36,6 @@ class PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     if @post.update(post_params)
       redirect_to @post, notice: t('.success')
@@ -50,7 +45,6 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post.destroy
     redirect_to posts_path, notice: t('.success')
